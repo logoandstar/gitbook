@@ -1,4 +1,3 @@
 # Summary
 
-- [Part I](README.md)
-- [Part II](README.md)
+- [GET 和 POST 的区别](README.md)
