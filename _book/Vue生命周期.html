@@ -1,0 +1,293 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue 生命周期 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Vue组件通信方式.html" />
+    
+    
+    <link rel="prev" href="JS防抖节流.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    GET 和 POST 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="JS防抖节流.html">
+            
+                <a href="JS防抖节流.html">
+            
+                    
+                    JS 防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="Vue生命周期.html">
+            
+                <a href="Vue生命周期.html">
+            
+                    
+                    Vue 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Vue组件通信方式.html">
+            
+                <a href="Vue组件通信方式.html">
+            
+                    
+                    Vue 组件通信方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Vue 生命周期</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="vue&#x751F;&#x547D;&#x5468;&#x671F;">Vue&#x751F;&#x547D;&#x5468;&#x671F;</h3>
+<ul>
+<li><h4 id="&#x6302;&#x8F7D;&#x9636;&#x6BB5;">&#x6302;&#x8F7D;&#x9636;&#x6BB5;</h4>
+</li>
+<li><h5 id="create&#xFF1A;&#x6B64;&#x9636;&#x6BB5;vue&#x5B9E;&#x4F8B;&#x5DF2;&#x521B;&#x5EFA;&#xFF08;&#x521B;&#x5EFA;&#x524D;&#xFF09;">create&#xFF1A;&#x6B64;&#x9636;&#x6BB5;vue&#x5B9E;&#x4F8B;&#x5DF2;&#x521B;&#x5EFA;&#xFF08;&#x521B;&#x5EFA;&#x524D;&#xFF09;</h5>
+</li>
+<li><h5 id="beforecreate&#x6B64;&#x9636;&#x6BB5;&#x4E3A;&#x5B9E;&#x4F8B;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#xFF08;&#x521B;&#x5EFA;&#x540E;&#xFF09;">beforeCreate:&#x6B64;&#x9636;&#x6BB5;&#x4E3A;&#x5B9E;&#x4F8B;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#xFF08;&#x521B;&#x5EFA;&#x540E;&#xFF09;</h5>
+</li>
+<li><h5 id="mounted&#xFF1A;&#x7EC4;&#x5EFA;&#x7ED8;&#x5236;&#x5B8C;&#x6210;&#xFF0C;&#x6570;&#x636E;&#x548C;dom&#x90FD;&#x5DF2;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF08;&#x8F7D;&#x5165;&#x524D;&#xFF09;">mounted&#xFF1A;&#x7EC4;&#x5EFA;&#x7ED8;&#x5236;&#x5B8C;&#x6210;&#xFF0C;&#x6570;&#x636E;&#x548C;DOM&#x90FD;&#x5DF2;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF08;&#x8F7D;&#x5165;&#x524D;&#xFF09;</h5>
+</li>
+<li><h5 id="beforemountvue&#x6302;&#x8F7D;&#x7684;&#x6839;&#x8282;&#x70B9;&#x5DF2;&#x521B;&#x5EFA;&#xFF08;&#x8F7D;&#x5165;&#x540E;&#xFF09;">beforeMount:vue&#x6302;&#x8F7D;&#x7684;&#x6839;&#x8282;&#x70B9;&#x5DF2;&#x521B;&#x5EFA;&#xFF08;&#x8F7D;&#x5165;&#x540E;&#xFF09;</h5>
+</li>
+<li><h5 id="updatadom&#x4F1A;&#x548C;&#x66F4;&#x6539;&#x8FC7;&#x7684;&#x5185;&#x5BB9;&#x540C;&#x6B65;&#xFF08;&#x66F4;&#x65B0;&#x524D;&#xFF09;">Updata:DOM&#x4F1A;&#x548C;&#x66F4;&#x6539;&#x8FC7;&#x7684;&#x5185;&#x5BB9;&#x540C;&#x6B65;&#xFF08;&#x66F4;&#x65B0;&#x524D;&#xFF09;</h5>
+</li>
+<li><h5 id="beforeupdatabeforeupdata&#x51FD;&#x6570;&#x5728;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x540E;&#x6CA1;&#x6709;&#x7ACB;&#x5373;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF08;&#x66F4;&#x65B0;&#x540E;&#xFF09;">beforeUpdata:beforeUpdata&#x51FD;&#x6570;&#x5728;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x540E;&#x6CA1;&#x6709;&#x7ACB;&#x5373;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF08;&#x66F4;&#x65B0;&#x540E;&#xFF09;</h5>
+</li>
+<li><h5 id="destroyed&#xFF1A;&#xFF08;&#x9500;&#x6BC1;&#x524D;&#xFF09;">destroyed&#xFF1A;&#xFF08;&#x9500;&#x6BC1;&#x524D;&#xFF09;</h5>
+</li>
+<li><h5 id="beforedestroyed&#xFF1A;&#xFF08;&#x9500;&#x6BC1;&#x540E;&#xFF09;">beforedestroyed&#xFF1A;&#xFF08;&#x9500;&#x6BC1;&#x540E;&#xFF09;</h5>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="JS防抖节流.html" class="navigation navigation-prev " aria-label="Previous page: JS 防抖和节流">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Vue组件通信方式.html" class="navigation navigation-next " aria-label="Next page: Vue 组件通信方式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue 生命周期","level":"1.3","depth":1,"next":{"title":"Vue 组件通信方式","level":"1.4","depth":1,"path":"Vue组件通信方式.md","ref":"Vue组件通信方式.md","articles":[]},"previous":{"title":"JS 防抖和节流","level":"1.2","depth":1,"path":"JS防抖节流.md","ref":"JS防抖节流.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue生命周期.md","mtime":"2021-01-18T08:34:43.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-18T08:44:07.633Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

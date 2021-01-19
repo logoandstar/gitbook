@@ -1,0 +1,281 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Vue 组件通信方式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Vue生命周期.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    GET 和 POST 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="JS防抖节流.html">
+            
+                <a href="JS防抖节流.html">
+            
+                    
+                    JS 防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Vue生命周期.html">
+            
+                <a href="Vue生命周期.html">
+            
+                    
+                    Vue 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="Vue组件通信方式.html">
+            
+                <a href="Vue组件通信方式.html">
+            
+                    
+                    Vue 组件通信方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Vue 组件通信方式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="vue-&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;">Vue &#x7EC4;&#x4EF6;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;</h3>
+<ul>
+<li><h4 id="&#x7236;&#x7EC4;&#x4EF6;&#x4E0E;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;">&#x7236;&#x7EC4;&#x4EF6;&#x4E0E;&#x5B50;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;</h4>
+</li>
+<li><h5 id="&#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7;-props-&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x6570;&#x636E;"><font color="red">&#x5B50;&#x7EC4;&#x4EF6;&#x901A;&#x8FC7; props &#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x6570;&#x636E;</font></h5>
+</li>
+<li><h4 id="&#x5B50;&#x7EC4;&#x4EF6;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;">&#x5B50;&#x7EC4;&#x4EF6;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;</h4>
+</li>
+<li><h5 id="emit-&#x65B9;&#x6CD5;&#x4F20;&#x9012;&#x53C2;&#x6570;"><font color="red">$emit &#x65B9;&#x6CD5;&#x4F20;&#x9012;&#x53C2;&#x6570;</font></h5>
+</li>
+<li><h4 id="&#x5144;&#x5F1F;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;">&#x5144;&#x5F1F;&#x7EC4;&#x4EF6;&#x4F20;&#x503C;</h4>
+</li>
+<li><h5 id="eventbus&#x7A7F;&#x4EF6;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x5FC3;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4F20;&#x9012;&#x4E66;&#x5251;&#x548C;&#x63A5;&#x53D7;&#x4E8B;&#x4EF6;"><font color="red">eventBus,&#x7A7F;&#x4EF6;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x5FC3;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4F20;&#x9012;&#x4E66;&#x5251;&#x548C;&#x63A5;&#x53D7;&#x4E8B;&#x4EF6;</font></h5>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Vue生命周期.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Vue 生命周期">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Vue 组件通信方式","level":"1.4","depth":1,"previous":{"title":"Vue 生命周期","level":"1.3","depth":1,"path":"Vue生命周期.md","ref":"Vue生命周期.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue组件通信方式.md","mtime":"2021-01-18T08:43:08.559Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-18T08:44:07.633Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
