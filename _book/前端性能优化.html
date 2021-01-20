@@ -1,0 +1,332 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>前端性能优化 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Vue组件通信方式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    GET 和 POST 的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="JS防抖节流.html">
+            
+                <a href="JS防抖节流.html">
+            
+                    
+                    JS 防抖和节流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Vue生命周期.html">
+            
+                <a href="Vue生命周期.html">
+            
+                    
+                    Vue 生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Vue组件通信方式.html">
+            
+                <a href="Vue组件通信方式.html">
+            
+                    
+                    Vue 组件通信方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="前端性能优化.html">
+            
+                <a href="前端性能优化.html">
+            
+                    
+                    前端性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >前端性能优化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x524D;&#x7AEF;&#x6027;&#x80FD;&#x4F18;&#x5316;">&#x524D;&#x7AEF;&#x6027;&#x80FD;&#x4F18;&#x5316;</h3>
+<ul>
+<li><h4 id="&#x51CF;&#x5C11;-http-&#x8BF7;&#x6C42;">&#x51CF;&#x5C11; HTTP &#x8BF7;&#x6C42;</h4>
+</li>
+<li><h4 id="&#x4F7F;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;">&#x4F7F;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;</h4>
+<ul>
+<li><h5 id="&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#xFF1A;&#x83B7;&#x53D6;-html-&#x6587;&#x4EF6;&#xFF0C;&#x6839;&#x636E;&#x9700;&#x8981;&#x4E0B;&#x8F7D;-javascript-&#x6587;&#x4EF6;&#xFF0C;&#x8FD0;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x751F;&#x6210;-dom&#xFF0C;&#x518D;&#x6E32;&#x67D3;&#x3002;">&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;&#xFF1A;&#x83B7;&#x53D6; HTML &#x6587;&#x4EF6;&#xFF0C;&#x6839;&#x636E;&#x9700;&#x8981;&#x4E0B;&#x8F7D; JavaScript &#x6587;&#x4EF6;&#xFF0C;&#x8FD0;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x751F;&#x6210; DOM&#xFF0C;&#x518D;&#x6E32;&#x67D3;&#x3002;</h5>
+</li>
+</ul>
+</li>
+<li><h4 id="&#x9759;&#x6001;&#x8D44;&#x6E90;&#x4F7F;&#x7528;-cdn">&#x9759;&#x6001;&#x8D44;&#x6E90;&#x4F7F;&#x7528; CDN</h4>
+<ul>
+<li><h5 id="&#x5728;&#x591A;&#x4E2A;&#x4F4D;&#x7F6E;&#x90E8;&#x7F72;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x674E;&#x670D;&#x52A1;&#x5668;&#x66F4;&#x8FD1;&#xFF0C;&#x4ECE;&#x800C;&#x7F29;&#x77ED;&#x8BF7;&#x6C42;&#x65F6;&#x95F4;">&#x5728;&#x591A;&#x4E2A;&#x4F4D;&#x7F6E;&#x90E8;&#x7F72;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x674E;&#x670D;&#x52A1;&#x5668;&#x66F4;&#x8FD1;&#xFF0C;&#x4ECE;&#x800C;&#x7F29;&#x77ED;&#x8BF7;&#x6C42;&#x65F6;&#x95F4;</h5>
+</li>
+</ul>
+</li>
+<li><h4 id="&#x5C06;-css-&#x653E;&#x5728;&#x6587;&#x4EF6;&#x5934;&#x90E8;&#xFF0C;javascript-&#x6587;&#x4EF6;&#x653E;&#x5728;&#x5E95;&#x90E8;&#x3002;">&#x5C06; CSS &#x653E;&#x5728;&#x6587;&#x4EF6;&#x5934;&#x90E8;&#xFF0C;JavaScript &#x6587;&#x4EF6;&#x653E;&#x5728;&#x5E95;&#x90E8;&#x3002;</h4>
+<ul>
+<li><h5 id="&#x56E0;&#x4E3A;&#x5148;&#x52A0;&#x8F7D;-html-&#x518D;&#x52A0;&#x8F7D;-css&#xFF0C;&#x4F1A;&#x8BA9;&#x7528;&#x6237;&#x7B2C;&#x4E00;&#x65F6;&#x95F4;&#x770B;&#x5230;&#x7684;&#x9875;&#x9762;&#x662F;&#x6CA1;&#x6709;&#x6837;&#x5F0F;&#x7684;&#x3002;&#x53E6;&#x5916;-js-&#x6587;&#x4EF6;&#x4E0D;&#x662F;&#x4E0D;&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x5934;&#x90E8;&#xFF0C;&#x53EA;&#x8981;&#x7ED9;-script-&#x6807;&#x7B7E;&#x52A0;&#x4E0A;-defer-&#x5C5E;&#x6027;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x5F02;&#x6B65;&#x4E0B;&#x8F7D;&#xFF0C;&#x5EF6;&#x8FDF;&#x6267;&#x884C;">&#x56E0;&#x4E3A;&#x5148;&#x52A0;&#x8F7D; HTML &#x518D;&#x52A0;&#x8F7D; CSS&#xFF0C;&#x4F1A;&#x8BA9;&#x7528;&#x6237;&#x7B2C;&#x4E00;&#x65F6;&#x95F4;&#x770B;&#x5230;&#x7684;&#x9875;&#x9762;&#x662F;&#x6CA1;&#x6709;&#x6837;&#x5F0F;&#x7684;&#x3002;&#x53E6;&#x5916; js &#x6587;&#x4EF6;&#x4E0D;&#x662F;&#x4E0D;&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x5934;&#x90E8;&#xFF0C;&#x53EA;&#x8981;&#x7ED9; script &#x6807;&#x7B7E;&#x52A0;&#x4E0A; defer &#x5C5E;&#x6027;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x5F02;&#x6B65;&#x4E0B;&#x8F7D;&#xFF0C;&#x5EF6;&#x8FDF;&#x6267;&#x884C;</h5>
+</li>
+</ul>
+</li>
+<li><h4 id="&#x4F7F;&#x7528;&#x5B57;&#x4F53;&#x56FE;&#x6807;-iconfont-&#x4EE3;&#x66FF;&#x56FE;&#x7247;&#x56FE;&#x6807;">&#x4F7F;&#x7528;&#x5B57;&#x4F53;&#x56FE;&#x6807; iconfont &#x4EE3;&#x66FF;&#x56FE;&#x7247;&#x56FE;&#x6807;</h4>
+<ul>
+<li><h5 id="&#x5B57;&#x4F53;&#x56FE;&#x6807;&#x662F;&#x5C06;&#x56FE;&#x6807;&#x5236;&#x4F5C;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x4F53;">&#x5B57;&#x4F53;&#x56FE;&#x6807;&#x662F;&#x5C06;&#x56FE;&#x6807;&#x5236;&#x4F5C;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x4F53;.</h5>
+</li>
+<li><h5 id="&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x5C0F;&#x3002;">&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x5C0F;&#x3002;</h5>
+</li>
+</ul>
+</li>
+<li><h4 id="&#x56FE;&#x7247;&#x4F18;&#x5316;">&#x56FE;&#x7247;&#x4F18;&#x5316;</h4>
+<ul>
+<li><h5 id="&#x56FE;&#x7247;&#x5EF6;&#x65F6;&#x52A0;&#x8F7D;">&#x56FE;&#x7247;&#x5EF6;&#x65F6;&#x52A0;&#x8F7D;</h5>
+</li>
+<li><h5 id="&#x54CD;&#x5E94;&#x5F0F;&#x56FE;&#x7247;">&#x54CD;&#x5E94;&#x5F0F;&#x56FE;&#x7247;</h5>
+</li>
+<li><h5 id="&#x8C03;&#x6574;&#x56FE;&#x7247;&#x5927;&#x5C0F;">&#x8C03;&#x6574;&#x56FE;&#x7247;&#x5927;&#x5C0F;</h5>
+</li>
+<li><h5 id="&#x964D;&#x4F4E;&#x56FE;&#x7247;&#x8D28;&#x91CF;">&#x964D;&#x4F4E;&#x56FE;&#x7247;&#x8D28;&#x91CF;</h5>
+</li>
+<li><h5 id="&#x5C3D;&#x91CF;&#x5229;&#x7528;-css-&#x6548;&#x679C;&#x4EE3;&#x66FF;&#x56FE;&#x7247;">&#x5C3D;&#x91CF;&#x5229;&#x7528; CSS &#x6548;&#x679C;&#x4EE3;&#x66FF;&#x56FE;&#x7247;</h5>
+</li>
+<li><h5 id="&#x4F7F;&#x7528;-webp-&#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;">&#x4F7F;&#x7528; webp &#x683C;&#x5F0F;&#x7684;&#x56FE;&#x7247;</h5>
+</li>
+</ul>
+</li>
+<li><h4 id="&#x538B;&#x7F29;&#x6587;&#x4EF6;">&#x538B;&#x7F29;&#x6587;&#x4EF6;</h4>
+<ul>
+<li><h5 id="&#x5229;&#x7528;-webpack-&#x5BF9;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x538B;&#x7F29;">&#x5229;&#x7528; webpack &#x5BF9;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x538B;&#x7F29;</h5>
+</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Vue组件通信方式.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Vue 组件通信方式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"前端性能优化","level":"1.5","depth":1,"previous":{"title":"Vue 组件通信方式","level":"1.4","depth":1,"path":"Vue组件通信方式.md","ref":"Vue组件通信方式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"前端性能优化.md","mtime":"2021-01-19T06:32:08.229Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-19T06:32:15.609Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
