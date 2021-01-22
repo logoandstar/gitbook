@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>keep-alive的使用方式 · GitBook</title>
+        <title>src和href的区别 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="src和href的区别.html" />
     
-    
-    <link rel="prev" href="本地存储cookie.html" />
+    <link rel="prev" href="keep-alive的使用方式.html" />
     
 
     </head>
@@ -167,7 +165,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7" data-path="keep-alive的使用方式.html">
+        <li class="chapter " data-level="1.7" data-path="keep-alive的使用方式.html">
             
                 <a href="keep-alive的使用方式.html">
             
@@ -180,7 +178,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="src和href的区别.html">
+        <li class="chapter active" data-level="1.8" data-path="src和href的区别.html">
             
                 <a href="src和href的区别.html">
             
@@ -223,7 +221,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >keep-alive的使用方式</a>
+        <a href="." >src和href的区别</a>
     </h1>
 </div>
 
@@ -238,13 +236,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="keep-alive-&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;">keep-alive &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</h3>
+                                <h3 id="src-&#x548C;-href-&#x7684;&#x533A;&#x522B;">src &#x548C; href &#x7684;&#x533A;&#x522B;</h3>
 <ul>
-<li><h4 id="&#x6982;&#x5FF5;-keep-alive-&#x662F;-vue-&#x7684;&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;&#xFF0C;&#x5F53;&#x5305;&#x88F9;&#x52A8;&#x6001;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x4F1A;&#x7F13;&#x5B58;&#x4E0D;&#x6D3B;&#x52A8;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x9500;&#x6BC1;">&#x6982;&#x5FF5;: keep-alive &#x662F; vue &#x7684;&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;&#xFF0C;&#x5F53;&#x5305;&#x88F9;&#x52A8;&#x6001;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x4F1A;&#x7F13;&#x5B58;&#x4E0D;&#x6D3B;&#x52A8;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x9500;&#x6BC1;</h4>
+<li><h4 id="href-&#x662F;&#x6307;&#x7F51;&#x7EDC;&#x8D44;&#x6E90;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#xFF0C;&#x5EFA;&#x7ACB;&#x548C;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x6216;&#x5F53;&#x524D;&#x6587;&#x6863;&#x4E4B;&#x95F4;&#x5EFA;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x7528;&#x4E8E;&#x8D85;&#x94FE;&#x63A5;">href &#x662F;&#x6307;&#x7F51;&#x7EDC;&#x8D44;&#x6E90;&#x6240;&#x5728;&#x4F4D;&#x7F6E;&#xFF0C;&#x5EFA;&#x7ACB;&#x548C;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x6216;&#x5F53;&#x524D;&#x6587;&#x6863;&#x4E4B;&#x95F4;&#x5EFA;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x7528;&#x4E8E;&#x8D85;&#x94FE;&#x63A5;</h4>
 </li>
-<li><h4 id="&#x4F5C;&#x7528;-&#x7528;&#x6765;&#x7F13;&#x5B58;&#x7EC4;&#x4EF6;&#xFF0C;&#x907F;&#x514D;&#x591A;&#x6B21;&#x52A0;&#x8F7D;&#x76F8;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x51CF;&#x5C11;&#x6027;&#x80FD;&#x6D88;&#x8017;&#xFF0C;&#x63D0;&#x9AD8;&#x7528;&#x6237;&#x4F53;&#x9A8C;">&#x4F5C;&#x7528;: &#x7528;&#x6765;&#x7F13;&#x5B58;&#x7EC4;&#x4EF6;&#xFF0C;&#x907F;&#x514D;&#x591A;&#x6B21;&#x52A0;&#x8F7D;&#x76F8;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x51CF;&#x5C11;&#x6027;&#x80FD;&#x6D88;&#x8017;&#xFF0C;&#x63D0;&#x9AD8;&#x7528;&#x6237;&#x4F53;&#x9A8C;</h4>
-</li>
-<li><h4 id="&#x4F7F;&#x7528;&#x65B9;&#x5F0F;-&#x5728;-appvue-&#x4E2D;&#x4F7F;&#x7528;-keep-alive-&#x6807;&#x7B7E;&#xFF0C;&#x8868;&#x793A;&#x7F13;&#x5B58;&#x6240;&#x6709;&#x9875;&#x9762;">&#x4F7F;&#x7528;&#x65B9;&#x5F0F;: &#x5728; APP.vue &#x4E2D;&#x4F7F;&#x7528; keep-alive &#x6807;&#x7B7E;&#xFF0C;&#x8868;&#x793A;&#x7F13;&#x5B58;&#x6240;&#x6709;&#x9875;&#x9762;</h4>
+<li><h4 id="src-&#x662F;&#x6307;&#x5411;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x4F4D;&#x7F6E;&#xFF0C;&#x6307;&#x5411;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x5D4C;&#x5165;&#x5230;&#x6587;&#x6863;&#x4E2D;&#x5F53;&#x524D;&#x7684;&#x6807;&#x7B7E;&#x6240;&#x5728;&#x7684;&#x4F4D;&#x7F6E;&#x3002;">src &#x662F;&#x6307;&#x5411;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x4F4D;&#x7F6E;&#xFF0C;&#x6307;&#x5411;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x5D4C;&#x5165;&#x5230;&#x6587;&#x6863;&#x4E2D;&#x5F53;&#x524D;&#x7684;&#x6807;&#x7B7E;&#x6240;&#x5728;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</h4>
 </li>
 </ul>
 
@@ -274,14 +270,10 @@
 
             
                 
-                <a href="本地存储cookie.html" class="navigation navigation-prev " aria-label="Previous page: 本地存储cookie">
+                <a href="keep-alive的使用方式.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: keep-alive的使用方式">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="src和href的区别.html" class="navigation navigation-next " aria-label="Next page: src和href的区别">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -290,7 +282,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"keep-alive的使用方式","level":"1.7","depth":1,"next":{"title":"src和href的区别","level":"1.8","depth":1,"path":"src和href的区别.md","ref":"src和href的区别.md","articles":[]},"previous":{"title":"本地存储cookie","level":"1.6","depth":1,"path":"本地存储cookie.md","ref":"本地存储cookie.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"keep-alive的使用方式.md","mtime":"2021-01-22T13:52:23.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-22T13:52:47.903Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"src和href的区别","level":"1.8","depth":1,"previous":{"title":"keep-alive的使用方式","level":"1.7","depth":1,"path":"keep-alive的使用方式.md","ref":"keep-alive的使用方式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src和href的区别.md","mtime":"2021-01-22T13:52:23.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-22T13:52:47.903Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
