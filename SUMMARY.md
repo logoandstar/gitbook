@@ -9,4 +9,5 @@
 - [keep-alive 的使用方式](keep-alive的使用方式.md)
 - [src 和 href 的区别](src和href的区别.md)
 - [rem em vh px 的含义](rem、em、vh和px的含义.md)
-- [v-if和v-show的区别](v-if和v-show的区别.md)
+- [v-if 和 v-show 的区别](v-if和v-show的区别.md)
+- [闭包](闭包.md)
