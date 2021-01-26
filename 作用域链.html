@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>本地存储 cookie · GitBook</title>
+        <title>作用域链 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="keep-alive的使用方式.html" />
     
-    
-    <link rel="prev" href="前端性能优化.html" />
+    <link rel="prev" href="闭包.html" />
     
 
     </head>
@@ -154,7 +152,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="本地存储cookie.html">
+        <li class="chapter " data-level="1.6" data-path="本地存储cookie.html">
             
                 <a href="本地存储cookie.html">
             
@@ -232,7 +230,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="作用域链.html">
+        <li class="chapter active" data-level="1.12" data-path="作用域链.html">
             
                 <a href="作用域链.html">
             
@@ -275,7 +273,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >本地存储 cookie</a>
+        <a href="." >作用域链</a>
     </h1>
 </div>
 
@@ -290,11 +288,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="cookie&#x3001;localstorage&#x3001;sessionstorage-&#x7684;&#x533A;&#x522B;">cookie&#x3001;localStorage&#x3001;sessionStorage &#x7684;&#x533A;&#x522B;</h3>
+                                <h3 id="&#x4F5C;&#x7528;&#x57DF;&#x94FE;">&#x4F5C;&#x7528;&#x57DF;&#x94FE;</h3>
 <ul>
-<li><h4 id="cookie--&#x4E00;&#x822C;&#x7531;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x751F;&#x6210;&#xFF0C;&#x53EF;&#x8BBE;&#x7F6E;&#x5931;&#x6548;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x751F;&#x6210;-cookie&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;&#x540E;&#x5931;&#x6548;&#x3002;cookie-&#x5927;&#x5C0F;&#x4E3A;-4kb-&#x5DE6;&#x53F3;&#x3002;cookie-&#x6BCF;&#x6B21;&#x90FD;&#x4F1A;&#x643A;&#x5E26;&#x5728;-http-&#x5934;&#x4E2D;&#xFF0C;&#x5982;&#x679C;-cookie-&#x4FDD;&#x5B58;&#x8FC7;&#x591A;&#x4F1A;&#x5E26;&#x6765;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;cookie-&#x539F;&#x751F;&#x63A5;&#x53E3;&#x4E0D;&#x53CB;&#x597D;&#x3002;">cookie : &#x4E00;&#x822C;&#x7531;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x751F;&#x6210;&#xFF0C;&#x53EF;&#x8BBE;&#x7F6E;&#x5931;&#x6548;&#x65F6;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7AEF;&#x751F;&#x6210; cookie&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x5173;&#x95ED;&#x6D4F;&#x89C8;&#x5668;&#x540E;&#x5931;&#x6548;&#x3002;cookie &#x5927;&#x5C0F;&#x4E3A; 4KB &#x5DE6;&#x53F3;&#x3002;cookie &#x6BCF;&#x6B21;&#x90FD;&#x4F1A;&#x643A;&#x5E26;&#x5728; HTTP &#x5934;&#x4E2D;&#xFF0C;&#x5982;&#x679C; cookie &#x4FDD;&#x5B58;&#x8FC7;&#x591A;&#x4F1A;&#x5E26;&#x6765;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;cookie &#x539F;&#x751F;&#x63A5;&#x53E3;&#x4E0D;&#x53CB;&#x597D;&#x3002;</h4>
+<li><h4 id="&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4FDD;&#x8BC1;&#x6267;&#x884C;&#x73AF;&#x5883;&#x91CC;&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x662F;&#x6709;&#x5E8F;&#x7684;&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x53D8;&#x91CF;&#x53EA;&#x80FD;&#x5411;&#x4E0A;&#x8BBF;&#x95EE;&#xFF0C;&#x53D8;&#x91CF;&#x8BBF;&#x95EE;&#x5230;-window-&#x5BF9;&#x8C61;&#x5373;&#x88AB;&#x7EC8;&#x6B62;&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x5411;&#x4E0B;&#x8BBF;&#x95EE;&#x53D8;&#x91CF;&#x662F;&#x4E0D;&#x88AB;&#x5141;&#x8BB8;&#x7684;">&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4FDD;&#x8BC1;&#x6267;&#x884C;&#x73AF;&#x5883;&#x91CC;&#x6709;&#x6743;&#x8BBF;&#x95EE;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#x662F;&#x6709;&#x5E8F;&#x7684;&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x7684;&#x53D8;&#x91CF;&#x53EA;&#x80FD;&#x5411;&#x4E0A;&#x8BBF;&#x95EE;&#xFF0C;&#x53D8;&#x91CF;&#x8BBF;&#x95EE;&#x5230; window &#x5BF9;&#x8C61;&#x5373;&#x88AB;&#x7EC8;&#x6B62;&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x94FE;&#x5411;&#x4E0B;&#x8BBF;&#x95EE;&#x53D8;&#x91CF;&#x662F;&#x4E0D;&#x88AB;&#x5141;&#x8BB8;&#x7684;</h4>
 </li>
-<li><h4 id="localstrong--&#x6C38;&#x4E45;&#x4FDD;&#x5B58;&#xFF0C;&#x9664;&#x975E;&#x88AB;&#x6E05;&#x9664;&#xFF0C;storage-&#x4E00;&#x822C;&#x4E3A;-5mb&#xFF0C;storage-&#x4EC5;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x4FDD;&#x5B58;&#xFF0C;&#x4E0D;&#x53C2;&#x4E0E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x901A;&#x4FE1;&#xFF0C;storage-&#x539F;&#x751F;&#x63A5;&#x53E3;&#x53CB;&#x597D;&#xFF0C;&#x4E5F;&#x53EF;&#x81EA;&#x884C;&#x5C01;&#x88C5;">localStrong : &#x6C38;&#x4E45;&#x4FDD;&#x5B58;&#xFF0C;&#x9664;&#x975E;&#x88AB;&#x6E05;&#x9664;&#xFF0C;storage &#x4E00;&#x822C;&#x4E3A; 5MB&#xFF0C;storage &#x4EC5;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x4FDD;&#x5B58;&#xFF0C;&#x4E0D;&#x53C2;&#x4E0E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x901A;&#x4FE1;&#xFF0C;storage &#x539F;&#x751F;&#x63A5;&#x53E3;&#x53CB;&#x597D;&#xFF0C;&#x4E5F;&#x53EF;&#x81EA;&#x884C;&#x5C01;&#x88C5;</h4>
+<li><h4 id="&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x5C31;&#x662F;&#x53D8;&#x91CF;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x53EF;&#x8BBF;&#x95EE;&#x8303;&#x56F4;&#xFF0C;&#x5373;&#x4F5C;&#x7528;&#x57DF;&#x63A7;&#x5236;&#x7740;&#x53D8;&#x91CF;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x53EF;&#x89C1;&#x6027;&#x548C;&#x751F;&#x547D;&#x5468;&#x671F;">&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C;&#x4F5C;&#x7528;&#x57DF;&#x5C31;&#x662F;&#x53D8;&#x91CF;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x53EF;&#x8BBF;&#x95EE;&#x8303;&#x56F4;&#xFF0C;&#x5373;&#x4F5C;&#x7528;&#x57DF;&#x63A7;&#x5236;&#x7740;&#x53D8;&#x91CF;&#x4E0E;&#x51FD;&#x6570;&#x7684;&#x53EF;&#x89C1;&#x6027;&#x548C;&#x751F;&#x547D;&#x5468;&#x671F;</h4>
 </li>
 </ul>
 
@@ -324,14 +322,10 @@
 
             
                 
-                <a href="前端性能优化.html" class="navigation navigation-prev " aria-label="Previous page: 前端性能优化">
+                <a href="闭包.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 闭包">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="keep-alive的使用方式.html" class="navigation navigation-next " aria-label="Next page: keep-alive 的使用方式">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -340,7 +334,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"本地存储 cookie","level":"1.6","depth":1,"next":{"title":"keep-alive 的使用方式","level":"1.7","depth":1,"path":"keep-alive的使用方式.md","ref":"keep-alive的使用方式.md","articles":[]},"previous":{"title":"前端性能优化","level":"1.5","depth":1,"path":"前端性能优化.md","ref":"前端性能优化.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"本地存储cookie.md","mtime":"2021-01-26T12:12:35.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-26T12:12:59.351Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"作用域链","level":"1.12","depth":1,"previous":{"title":"闭包","level":"1.11","depth":1,"path":"闭包.md","ref":"闭包.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"作用域链.md","mtime":"2021-01-26T12:12:35.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-26T12:12:59.351Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
