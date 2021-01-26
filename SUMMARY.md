@@ -11,3 +11,4 @@
 - [rem em vh px 的含义](rem、em、vh和px的含义.md)
 - [v-if 和 v-show 的区别](v-if和v-show的区别.md)
 - [闭包](闭包.md)
+- [作用域链](作用域链.md)
