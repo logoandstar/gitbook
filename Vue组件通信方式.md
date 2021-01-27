@@ -10,4 +10,4 @@
 
 - #### 兄弟组件传值
 
-* ##### <font color=red>eventBus,穿件一个事件中心，可以用来传递书剑和接受事件</font>
+* ##### <font color=red>eventBus,穿件一个事件中心，可以用来传递事件和接受事件</font>

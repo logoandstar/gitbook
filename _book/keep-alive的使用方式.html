@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Vue 生命周期 · GitBook</title>
+        <title>keep-alive 的使用方式 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Vue组件通信方式.html" />
+    <link rel="next" href="src和href的区别.html" />
     
     
-    <link rel="prev" href="JS防抖节流.html" />
+    <link rel="prev" href="本地存储cookie.html" />
     
 
     </head>
@@ -115,7 +115,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="Vue生命周期.html">
+        <li class="chapter " data-level="1.3" data-path="Vue生命周期.html">
             
                 <a href="Vue生命周期.html">
             
@@ -167,7 +167,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="keep-alive的使用方式.html">
+        <li class="chapter active" data-level="1.7" data-path="keep-alive的使用方式.html">
             
                 <a href="keep-alive的使用方式.html">
             
@@ -288,7 +288,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Vue 生命周期</a>
+        <a href="." >keep-alive 的使用方式</a>
     </h1>
 </div>
 
@@ -303,25 +303,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="vue&#x751F;&#x547D;&#x5468;&#x671F;">Vue&#x751F;&#x547D;&#x5468;&#x671F;</h3>
+                                <h3 id="keep-alive-&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;">keep-alive &#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</h3>
 <ul>
-<li><h4 id="&#x6302;&#x8F7D;&#x9636;&#x6BB5;">&#x6302;&#x8F7D;&#x9636;&#x6BB5;</h4>
+<li><h4 id="&#x6982;&#x5FF5;-keep-alive-&#x662F;-vue-&#x7684;&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;&#xFF0C;&#x5F53;&#x5305;&#x88F9;&#x52A8;&#x6001;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x4F1A;&#x7F13;&#x5B58;&#x4E0D;&#x6D3B;&#x52A8;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x9500;&#x6BC1;">&#x6982;&#x5FF5;: keep-alive &#x662F; vue &#x7684;&#x5185;&#x7F6E;&#x7EC4;&#x4EF6;&#xFF0C;&#x5F53;&#x5305;&#x88F9;&#x52A8;&#x6001;&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x4F1A;&#x7F13;&#x5B58;&#x4E0D;&#x6D3B;&#x52A8;&#x7684;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x9500;&#x6BC1;</h4>
 </li>
-<li><h5 id="create&#xFF1A;&#x6B64;&#x9636;&#x6BB5;vue&#x5B9E;&#x4F8B;&#x5DF2;&#x521B;&#x5EFA;&#xFF08;&#x521B;&#x5EFA;&#x524D;&#xFF09;">create&#xFF1A;&#x6B64;&#x9636;&#x6BB5;vue&#x5B9E;&#x4F8B;&#x5DF2;&#x521B;&#x5EFA;&#xFF08;&#x521B;&#x5EFA;&#x524D;&#xFF09;</h5>
+<li><h4 id="&#x4F5C;&#x7528;-&#x7528;&#x6765;&#x7F13;&#x5B58;&#x7EC4;&#x4EF6;&#xFF0C;&#x907F;&#x514D;&#x591A;&#x6B21;&#x52A0;&#x8F7D;&#x76F8;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x51CF;&#x5C11;&#x6027;&#x80FD;&#x6D88;&#x8017;&#xFF0C;&#x63D0;&#x9AD8;&#x7528;&#x6237;&#x4F53;&#x9A8C;">&#x4F5C;&#x7528;: &#x7528;&#x6765;&#x7F13;&#x5B58;&#x7EC4;&#x4EF6;&#xFF0C;&#x907F;&#x514D;&#x591A;&#x6B21;&#x52A0;&#x8F7D;&#x76F8;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x51CF;&#x5C11;&#x6027;&#x80FD;&#x6D88;&#x8017;&#xFF0C;&#x63D0;&#x9AD8;&#x7528;&#x6237;&#x4F53;&#x9A8C;</h4>
 </li>
-<li><h5 id="beforecreate&#x6B64;&#x9636;&#x6BB5;&#x4E3A;&#x5B9E;&#x4F8B;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#xFF08;&#x521B;&#x5EFA;&#x540E;&#xFF09;">beforeCreate:&#x6B64;&#x9636;&#x6BB5;&#x4E3A;&#x5B9E;&#x4F8B;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#xFF08;&#x521B;&#x5EFA;&#x540E;&#xFF09;</h5>
-</li>
-<li><h5 id="mounted&#xFF1A;&#x7EC4;&#x5EFA;&#x7ED8;&#x5236;&#x5B8C;&#x6210;&#xFF0C;&#x6570;&#x636E;&#x548C;dom&#x90FD;&#x5DF2;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF08;&#x8F7D;&#x5165;&#x524D;&#xFF09;">mounted&#xFF1A;&#x7EC4;&#x5EFA;&#x7ED8;&#x5236;&#x5B8C;&#x6210;&#xFF0C;&#x6570;&#x636E;&#x548C;DOM&#x90FD;&#x5DF2;&#x6E32;&#x67D3;&#x51FA;&#x6765;&#xFF08;&#x8F7D;&#x5165;&#x524D;&#xFF09;</h5>
-</li>
-<li><h5 id="beforemountvue&#x6302;&#x8F7D;&#x7684;&#x6839;&#x8282;&#x70B9;&#x5DF2;&#x521B;&#x5EFA;&#xFF08;&#x8F7D;&#x5165;&#x540E;&#xFF09;">beforeMount:vue&#x6302;&#x8F7D;&#x7684;&#x6839;&#x8282;&#x70B9;&#x5DF2;&#x521B;&#x5EFA;&#xFF08;&#x8F7D;&#x5165;&#x540E;&#xFF09;</h5>
-</li>
-<li><h5 id="updatadom&#x4F1A;&#x548C;&#x66F4;&#x6539;&#x8FC7;&#x7684;&#x5185;&#x5BB9;&#x540C;&#x6B65;&#xFF08;&#x66F4;&#x65B0;&#x524D;&#xFF09;">Updata:DOM&#x4F1A;&#x548C;&#x66F4;&#x6539;&#x8FC7;&#x7684;&#x5185;&#x5BB9;&#x540C;&#x6B65;&#xFF08;&#x66F4;&#x65B0;&#x524D;&#xFF09;</h5>
-</li>
-<li><h5 id="beforeupdatabeforeupdata&#x51FD;&#x6570;&#x5728;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x540E;&#x6CA1;&#x6709;&#x7ACB;&#x5373;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF08;&#x66F4;&#x65B0;&#x540E;&#xFF09;">beforeUpdata:beforeUpdata&#x51FD;&#x6570;&#x5728;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x540E;&#x6CA1;&#x6709;&#x7ACB;&#x5373;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF08;&#x66F4;&#x65B0;&#x540E;&#xFF09;</h5>
-</li>
-<li><h5 id="destroyed&#xFF1A;&#xFF08;&#x9500;&#x6BC1;&#x524D;&#xFF09;">destroyed&#xFF1A;&#xFF08;&#x9500;&#x6BC1;&#x524D;&#xFF09;</h5>
-</li>
-<li><h5 id="beforedestroyed&#xFF1A;&#xFF08;&#x9500;&#x6BC1;&#x540E;&#xFF09;">beforedestroyed&#xFF1A;&#xFF08;&#x9500;&#x6BC1;&#x540E;&#xFF09;</h5>
+<li><h4 id="&#x4F7F;&#x7528;&#x65B9;&#x5F0F;-&#x5728;-appvue-&#x4E2D;&#x4F7F;&#x7528;-keep-alive-&#x6807;&#x7B7E;&#xFF0C;&#x8868;&#x793A;&#x7F13;&#x5B58;&#x6240;&#x6709;&#x9875;&#x9762;">&#x4F7F;&#x7528;&#x65B9;&#x5F0F;: &#x5728; APP.vue &#x4E2D;&#x4F7F;&#x7528; keep-alive &#x6807;&#x7B7E;&#xFF0C;&#x8868;&#x793A;&#x7F13;&#x5B58;&#x6240;&#x6709;&#x9875;&#x9762;</h4>
 </li>
 </ul>
 
@@ -351,12 +339,12 @@
 
             
                 
-                <a href="JS防抖节流.html" class="navigation navigation-prev " aria-label="Previous page: JS 防抖和节流">
+                <a href="本地存储cookie.html" class="navigation navigation-prev " aria-label="Previous page: 本地存储 cookie">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Vue组件通信方式.html" class="navigation navigation-next " aria-label="Next page: Vue 组件通信方式">
+                <a href="src和href的区别.html" class="navigation navigation-next " aria-label="Next page: src 和 href 的区别">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -367,7 +355,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue 生命周期","level":"1.3","depth":1,"next":{"title":"Vue 组件通信方式","level":"1.4","depth":1,"path":"Vue组件通信方式.md","ref":"Vue组件通信方式.md","articles":[]},"previous":{"title":"JS 防抖和节流","level":"1.2","depth":1,"path":"JS防抖节流.md","ref":"JS防抖节流.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Vue生命周期.md","mtime":"2021-01-18T08:34:43.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-27T06:29:17.012Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"keep-alive 的使用方式","level":"1.7","depth":1,"next":{"title":"src 和 href 的区别","level":"1.8","depth":1,"path":"src和href的区别.md","ref":"src和href的区别.md","articles":[]},"previous":{"title":"本地存储 cookie","level":"1.6","depth":1,"path":"本地存储cookie.md","ref":"本地存储cookie.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"keep-alive的使用方式.md","mtime":"2021-01-21T05:47:18.501Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-27T06:29:17.012Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
